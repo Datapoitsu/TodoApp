@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href="style.css" rel="stylesheet">
+    </head>
+    <body>
+        <div class="main" id="main">
+            <div class="header">
+                <h1>To do list</h1>
+            </div>
+            <div class="header">
+                <button type="button" onclick="showAll()">Show all</button>
+                <button type="button" onclick="showDone()">Show Done</button>
+                <button type="button" onclick="showUndone()">Show Undone</button>
+                <!--<button type="button" onclick="printData()">Print Data</button> -->
+            </div>
+            <div class="header">
+                <p>Add item</p>
+                <input type="text" id="inputText"></input>
+                <button type="button" onclick="AddAction()">Submit</button> 
+            </div>
+        </div>
+    </body>
+</html>
+<script src="todo.js"></script>

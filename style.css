@@ -1,0 +1,32 @@
+body{
+    text-align: center;
+    background-color: grey;
+}
+
+.main
+{
+    margin: auto;
+    width: 15vw;
+}
+
+.Activity
+{
+    display: inline-flex;
+    background-color: aliceblue;
+    padding: 1vw;
+    margin: auto;
+    margin-bottom: 1vw;
+    width: 15vw;
+}
+
+.header{
+    background-color: aliceblue;
+    padding: 1vw;
+    margin: auto;
+    margin-bottom: 1vw;
+    width: 15vw;
+}
+
+input,button{
+    height: 1vw;
+}
