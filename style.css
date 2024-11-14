@@ -1,32 +1,46 @@
 body{
     text-align: center;
-    background-color: grey;
+    background-color: lightblue;
+}
+
+.main, .header, .activity{
+    margin: auto;
+    width: 15vw;
+    border-radius: 25px;
 }
 
 .main
 {
-    margin: auto;
-    width: 15vw;
+    
 }
 
-.Activity
-{
-    display: inline-flex;
+.header, .activity{
     background-color: aliceblue;
     padding: 1vw;
-    margin: auto;
     margin-bottom: 1vw;
-    width: 15vw;
-}
-
-.header{
-    background-color: aliceblue;
-    padding: 1vw;
-    margin: auto;
-    margin-bottom: 1vw;
-    width: 15vw;
 }
 
 input,button{
-    height: 1vw;
+    height: 3vw;
+    font-size: 1vw;
+}
+
+h1{
+    font-size: 58px;
+    color: rgb(118, 118, 235);
+}
+
+h2{
+    font-size: 32px;
+    color: rgb(118, 118, 235);
+}
+
+input[type="file"] {
+    display: none;
+}
+
+.custom-file-upload {
+    display: inline-block;
+    padding: 6px 12px;
+    cursor: pointer;
 }

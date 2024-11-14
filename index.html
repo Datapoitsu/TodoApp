@@ -6,16 +6,27 @@
     <body>
         <div class="main" id="main">
             <div class="header">
-                <h1>To do list</h1>
+                <h1>To-do list</h1>
             </div>
             <div class="header">
+                
                 <button type="button" onclick="showAll()">Show all</button>
                 <button type="button" onclick="showDone()">Show Done</button>
                 <button type="button" onclick="showUndone()">Show Undone</button>
-                <!--<button type="button" onclick="printData()">Print Data</button> -->
+                <div style="width:100%;height: 20px;"></div>
+                <button type="button" id="download" onclick="saveData()">Save Data</button>
+                
+                    <label for="fileInput" class="custom-file-upload">
+                        <button style="pointer-events:none;">
+                            Load Data
+                        </button>
+                        
+                    </label> 
+                             
+                <input type="file" id="fileInput"/>
             </div>
             <div class="header">
-                <p>Add item</p>
+                <h2>Add item</h2>
                 <input type="text" id="inputText"></input>
                 <button type="button" onclick="AddAction()">Submit</button> 
             </div>

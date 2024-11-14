@@ -1,5 +1,33 @@
 var Actions = [];
 var highestID = 0;
+
+function start()
+{
+    document.getElementById('fileInput').addEventListener('change', (event) =>
+    {
+        const file = event.target.files[0];
+        const reader = new FileReader();
+
+        reader.onload = function()
+        {
+            Actions = JSON.parse(reader.result.toString());
+            for(var i = 0; i < Actions.length; i++)
+            {
+                addTab(Actions[i],Actions[i].done);
+            }
+            document.getElementById('fileInput').style.display = "none";
+        };
+
+        reader.onerror = function ()
+        {
+            console.error('Error reading the file');
+        };
+
+        reader.readAsText(file, 'utf-8');
+    });
+}
+start();
+
 function UniqueId()
 {
     highestID++;
@@ -32,7 +60,7 @@ function addTab(newAction,done)
 {
     var div = document.createElement("div");
     div.id = newAction.id;
-    div.className = "Activity";
+    div.className = "activity";
 
     var a = document.createElement("input");
     a.type = "checkbox";
@@ -194,3 +222,18 @@ function showUndone()
         }
     }
 }
+
+var saveData = (function () {
+    var a = document.createElement("a");
+    document.body.appendChild(a);
+    a.style = "display: none";
+    return function () {
+        var json = JSON.stringify(Actions),
+            blob = new Blob([json], {type: "octet/stream"}),
+            url = window.URL.createObjectURL(blob);
+        a.href = url;
+        a.download = "todo.json";
+        a.click();
+        window.URL.revokeObjectURL(url);
+    };
+}());
